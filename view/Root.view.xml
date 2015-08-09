@@ -1,12 +1,8 @@
 <mvc:View controllerName="com.namespace.controller.Root" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
     <App id="app" initialPage="input">
         <pages>
-            <!--   <Page title="{i18n>appTitle}">
-                <content> -->
             <mvc:XMLView id="input" viewName="com.namespace.view.Input" />
             <mvc:XMLView id="output" viewName="com.namespace.view.Output" />
-            <!-- </content>
-            </Page> -->
         </pages>
     </App>
 </mvc:View>

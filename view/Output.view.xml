@@ -1,45 +1,42 @@
 <mvc:View controllerName="com.namespace.controller.Output" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
-    <l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
-        <l:content>
-            <f:Form id="FormDisplay354" minWidth="1024" maxContainerCols="2" editable="false" class="isReadonly">
-                <f:title>
-                    <core:Title text="Address" />
-                </f:title>
-                <f:layout>
-                    <f:ResponsiveGridLayout labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" />
-                </f:layout>
-                <f:formContainers>
-                    <f:FormContainer>
-                        <f:formElements>
-                            <f:FormElement label="{i18n>temperatureCurrent}">
-                                <f:fields>
-                                    <Text text="{/main/temp}" id="nameText" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="{i18n>temperatureMin}">
-                                <f:fields>
-                                    <Text text="{/main/min}" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="{i18n>temperatureMax}">
-                                <f:fields>
-                                    <Text text="{/main/max}" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement label="{i18n>windSpeed}">
-                                <f:fields>
-                                    <Text text="{/wind/speed}" id="countryText" />
-                                </f:fields>
-                            </f:FormElement>
-                            <f:FormElement>
-                                <f:fields>
-                                    <Button text="{i18n>back}" id=".onBackButtonPress" />
-                                </f:fields>
-                            </f:FormElement>
-                        </f:formElements>
-                    </f:FormContainer>
-                </f:formContainers>
-            </f:Form>
-        </l:content>
-    </l:Grid>
+    <Page title="{i18n>appTitle}" showNavButton="true" navButtonPress=".onBackButtonPress">
+        <l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
+            <l:content>
+                <f:Form maxContainerCols="2" editable="false" class="isReadonly">
+                    <f:title>
+                        <core:Title text="{i18n>weather}" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                <f:FormElement label="{i18n>temperatureCurrent}">
+                                    <f:fields>
+                                        <Text text="{/main/temp}" id="nameText" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>temperatureMin}">
+                                    <f:fields>
+                                        <Text text="{/main/temp_min}" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>temperatureMax}">
+                                    <f:fields>
+                                        <Text text="{/main/temp_max}" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>windSpeed}">
+                                    <f:fields>
+                                        <Text text="{/wind/speed}" id="countryText" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </l:content>
+        </l:Grid>
+    </Page>
 </mvc:View>
