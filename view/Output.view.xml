@@ -11,24 +11,29 @@
                 <f:formContainers>
                     <f:FormContainer>
                         <f:formElements>
-                            <f:FormElement label="Name">
+                            <f:FormElement label="{i18n>temperatureCurrent}">
                                 <f:fields>
-                                    <Text text="{SupplierName}" id="nameText" />
+                                    <Text text="{/main/temp}" id="nameText" />
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Street">
+                            <f:FormElement label="{i18n>temperatureMin}">
                                 <f:fields>
-                                    <Text text="{Street} {HouseNumber}" />
+                                    <Text text="{/main/min}" />
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="ZIP Code/City">
+                            <f:FormElement label="{i18n>temperatureMax}">
                                 <f:fields>
-                                    <Text text="{ZIPCode} {City}" />
+                                    <Text text="{/main/max}" />
                                 </f:fields>
                             </f:FormElement>
-                            <f:FormElement label="Country">
+                            <f:FormElement label="{i18n>windSpeed}">
                                 <f:fields>
-                                    <Text text="{Country}" id="countryText" />
+                                    <Text text="{/wind/speed}" id="countryText" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement>
+                                <f:fields>
+                                    <Button text="{i18n>back}" id=".onBackButtonPress" />
                                 </f:fields>
                             </f:FormElement>
                         </f:formElements>

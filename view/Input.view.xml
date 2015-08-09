@@ -27,13 +27,13 @@
                                     </f:FormElement>
                                     <f:FormElement label="{i18n>city}">
                                         <f:fields>
-                                            <Input id="city_name" change=".getWeatherDataByCity" />
+                                            <Input id="city_name" change=".onCityNameChanged" />
                                             <Text id="country_text" />
                                         </f:fields>
                                     </f:FormElement>
                                     <f:FormElement>
                                         <f:fields>
-                                            <Button text="{i18n>weatherButton}" />
+                                            <Button text="{i18n>weatherButton}" press="onWeatherButtonPress" />
                                         </f:fields>
                                     </f:FormElement>
                                 </f:formElements>

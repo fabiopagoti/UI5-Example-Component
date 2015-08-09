@@ -9,8 +9,6 @@ sap.ui.define([
         },
 
         onAfterRendering: function() {
-            // this.getView().setModel(sap.ui.getCore().getModel());
-            debugger;
             this.getView().getModel().attachRequestCompleted(this.bindPath, this);
             this.initTexts();
         },
@@ -37,12 +35,7 @@ sap.ui.define([
             });
         },
 
-        getWeatherDataByCity: function(evt) {
-            // this.unbindPath();
-            // this.byId("latitude_slider").unbindProperty("value");
-            // this.byId("longitude_slider").unbindProperty("value");
-            // this.byId("latitude_text").unbindProperty("text");
-            // this.byId("longitude_text").unbindProperty("text");
+        onCityNameChanged: function(evt) {
 
             this.byId("latitude_slider")
                 .bindProperty("value", {
@@ -68,8 +61,9 @@ sap.ui.define([
             });
         },
 
-        unbindPath: function() {
-            this.byId("city_name").unbindProperty("value");
+        onWeatherButtonPress: function(){
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("output");
         },
 
         bindPath: function() {

@@ -40,6 +40,35 @@
 				"bundleName": "com.namespace.i18n.i18n"
 			}
 		}
+	},
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "com.namespace.view",
+		"controlId": "app",
+		"controlAggregation": "pages"
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "input",
+		  "target": "input"
+		},
+		{
+		  "pattern": "output",
+		  "name": "output",
+		  "target": "output"
+		}
+	  ],
+	  "targets": {
+		"input": {
+		  "viewName": "Input"
+		},
+		"output": {
+		  "viewName": "Output"
+		}
+	  }
 	}
   }
 }
