@@ -1,0 +1,9 @@
+<mvc:View controllerName="com.namespace.controller.Input" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
+    <Panel>
+        <content>
+            <Label text="{i18n>cityLabel}" labelFor="city_name" />
+            <Input id="city_name" />
+            <Button text="{i18n>getWeatherDataButton}" press=".onButtonPressed" />
+        </content>
+    </Panel>
+</mvc:View>

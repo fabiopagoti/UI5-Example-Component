@@ -1,11 +1,11 @@
-<mvc:View controllerName="com.namespace.controller.Root" xmlns="sap.m" xmlns:mvc="sap.ui.mvc">
+<mvc:View controllerName="com.namespace.controller.Root" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" displayBlock="true">
     <App>
-        <Page title="{i18n>appTitle}">
-            <HBox>
-                <Label text="{i18n>cityLabel}" labelFor="city_name" />
-                <Input id="city_name"  />
-                <Button text="{i18n>getWeatherDataButton}" press=".onButtonPressed" />
-            </HBox>
-        </Page>
+        <pages>
+            <Page title="{i18n>appTitle}">
+                <content>
+                    <mvc:XMLView viewName="com.namespace.view.Input" />
+                </content>
+            </Page>
+        </pages>
     </App>
 </mvc:View>
