@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UI5 Empty Component</title>
+    <meta name="description" content="">
+    <script src="../sdk/beta/resources/sap-ui-core.js" id="sap-ui-bootstrap" data-sap-ui-theme="sap_bluecrystal" data-sap-ui-libs="sap.m" data-sap-ui-bindingSyntax="complex" data-sap-ui-resourceroots='{ "com.namespace": "./" }'>
+    </script>
+    <script>
+    sap.ui.getCore().attachInit(function() {
+        new sap.ui.core.ComponentContainer({
+            name: "com.namespace"
+        }).placeAt("content");
+    });
+    </script>
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+
+</html>
