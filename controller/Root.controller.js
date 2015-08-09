@@ -6,20 +6,33 @@ sap.ui.define([
     return Controller.extend("com.namespace.controller.Root", {
 
         onAfterRendering: function() {
-        	sap.ui.getCore().getModel().attachRequestCompleted(this.setPath,this);
+        	this.getView().setModel(sap.ui.getCore().getModel());
+            sap.ui.getCore().getModel().attachRequestCompleted(this.setPath,this);
         },
 
         onButtonPressed: function() {
-            sap.ui.getCore().getModel()
-            	.loadData("api.openweathermap.org/data/2.5/weather",
-            	{
-            		q: this.byId("city_name")
-            	});
+            // var mod = this.getOwnerComponent().getModel();
+            // console.log(mod);
+            // mod.setData({
+            //     city: {
+            //         name: "Sao Paulo",
+            //     }
+            // });
+
+
+    		var mod2 = sap.ui.getCore().getModel();
+    		console.log(mod2);
+    		mod2.loadData("//api.openweathermap.org/data/2.5/weather",{
+    			q: this.byId("city_name").getValue()
+    		});
 
         },
 
-        setPath: function(){
-        	console.log("setPath");
+        setPath: function() {
+
+             this.byId("city_name").bindProperty("description",{
+             	path: "/main/temp"
+             })
         }
 
     });

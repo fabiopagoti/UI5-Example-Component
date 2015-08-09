@@ -3,7 +3,7 @@
         <Page title="{i18n>appTitle}">
             <HBox>
                 <Label text="{i18n>cityLabel}" labelFor="city_name" />
-                <Input value="{/city/name}" id="city_name" />
+                <Input id="city_name"  />
                 <Button text="{i18n>getWeatherDataButton}" press=".onButtonPressed" />
             </HBox>
         </Page>

@@ -10,14 +10,7 @@ sap.ui.define([
         init: function() {
             // call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
-            // set data model
-            var oData = {
-                city: {
-                    name: "Sao Paulo",
-                    temp: 30
-                }
-            };
-            var oModel = new JSONModel(oData);
+            var oModel = new JSONModel();
             sap.ui.getCore().setModel(oModel);
         }
     });
