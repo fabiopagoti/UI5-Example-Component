@@ -32,6 +32,7 @@ sap.ui.define([
             this.getView().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
                 lat: this.byId("latitude_slider").getValue(),
                 lon: this.byId("longitude_slider").getValue(),
+                units: "metric"
             });
         },
 
@@ -57,7 +58,8 @@ sap.ui.define([
                     path: "/coord/lon"
                 });
             this.getView().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
-                q: this.byId("city_name").getValue()
+                q: this.byId("city_name").getValue(),
+                units: "metric"
             });
         },
 

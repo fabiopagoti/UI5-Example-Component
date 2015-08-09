@@ -14,22 +14,31 @@
                             <f:formElements>
                                 <f:FormElement label="{i18n>temperatureCurrent}">
                                     <f:fields>
-                                        <Text text="{/main/temp}" id="nameText" />
+                                        <Input editable="false" value="{ 
+                                            path: '/main/temp',
+                                            formatter: '.formatTemperature'
+                                            }" description="C" />
                                     </f:fields>
                                 </f:FormElement>
-                                <f:FormElement label="{i18n>temperatureMin}">
+                                <f:FormElement label="{i18n>pressure}">
                                     <f:fields>
-                                        <Text text="{/main/temp_min}" />
+                                        <Input editable="false" value="{ 
+                                            path: '/main/pressure',
+                                            formatter: '.formatPressure'
+                                            }" description="hPa" />
                                     </f:fields>
                                 </f:FormElement>
-                                <f:FormElement label="{i18n>temperatureMax}">
+                                <f:FormElement label="{i18n>humidity}">
                                     <f:fields>
-                                        <Text text="{/main/temp_max}" />
+                                        <Input editable="false" value="{ 
+                                            path: '/main/humidity',
+                                            formatter: '.formatHumidity'
+                                            }" description="%" />
                                     </f:fields>
                                 </f:FormElement>
                                 <f:FormElement label="{i18n>windSpeed}">
                                     <f:fields>
-                                        <Text text="{/wind/speed}" id="countryText" />
+                                        <Input editable="false" value="{/wind/speed}" description="meter/sec" />
                                     </f:fields>
                                 </f:FormElement>
                             </f:formElements>
