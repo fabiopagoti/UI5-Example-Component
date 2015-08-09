@@ -11,7 +11,7 @@ sap.ui.define([
             // call the init function of the parent
             UIComponent.prototype.init.apply(this, arguments);
             var oModel = new JSONModel();
-            sap.ui.getCore().setModel(oModel);
+            this.setModel(oModel);
         }
     });
 });

@@ -9,8 +9,9 @@ sap.ui.define([
         },
 
         onAfterRendering: function() {
-            this.getView().setModel(sap.ui.getCore().getModel());
-            sap.ui.getCore().getModel().attachRequestCompleted(this.bindPath, this);
+            // this.getView().setModel(sap.ui.getCore().getModel());
+            debugger;
+            this.getView().getModel().attachRequestCompleted(this.bindPath, this);
             this.initTexts();
         },
 
@@ -30,7 +31,7 @@ sap.ui.define([
         },
 
         getWeatherDataByCoordinates: function() {
-            sap.ui.getCore().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
+            this.getView().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
                 lat: this.byId("latitude_slider").getValue(),
                 lon: this.byId("longitude_slider").getValue(),
             });
@@ -62,7 +63,7 @@ sap.ui.define([
                 .bindProperty("text", {
                     path: "/coord/lon"
                 });
-            sap.ui.getCore().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
+            this.getView().getModel().loadData("//api.openweathermap.org/data/2.5/weather", {
                 q: this.byId("city_name").getValue()
             });
         },
