@@ -1,0 +1,49 @@
+<mvc:View controllerName="com.namespace.controller.Input" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page title="{i18n>appTitle}" >
+        <Panel>
+            <content>
+                <l:Grid defaultSpan="L12 M12 S12" hSpacing="2" position="Center">
+                    <l:content>
+                        <f:Form maxContainerCols="3" editable="false" class="isReadonly">
+                            <f:title>
+                                <core:Title text="{i18n>coordinates}" />
+                            </f:title>
+                            <f:layout>
+                                <f:ResponsiveGridLayout labelSpanL="2" labelSpanM="2" labelSpanS="12" emptySpanL="0" emptySpanM="0" emptySpanS="6" columnsL="2" columnsM="2" />
+                            </f:layout>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="{i18n>latitude}">
+                                            <f:fields>
+                                                <Slider id="latitude_slider" min="-90" max="90" value="0" step="0.01" text="{i18n>latitude}" change=".onLatitudeSliderChange" />
+                                                <Text id="latitude_text" text="0" />
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="{i18n>longitude}">
+                                            <f:fields>
+                                                <Slider id="longitude_slider" min="-180" max="180" value="0" step="0.01" text="{i18n>longitude}" change=".onLongitudeSliderChange" />
+                                                <Text id="longitude_text" text="0" />
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="{i18n>city}">
+                                            <f:fields>
+                                                <Input id="city_name" change=".onCityNameChanged" />
+                                                <Text id="country_text" />
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement>
+                                            <f:fields>
+                                                <Button text="{i18n>weatherButton}" press="onWeatherButtonPress" />
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </l:content>
+                </l:Grid>
+            </content>
+        </Panel>
+    </Page>
+</mvc:View>

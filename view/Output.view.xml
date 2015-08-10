@@ -1,0 +1,51 @@
+<mvc:View controllerName="com.namespace.controller.Output" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+    <Page title="{i18n>appTitle}" showNavButton="true" navButtonPress=".onBackButtonPress">
+        <l:Grid defaultSpan="L12 M12 S12" hSpacing="2" width="auto">
+            <l:content>
+                <f:Form maxContainerCols="2" editable="false" class="isReadonly">
+                    <f:title>
+                        <core:Title text="{i18n>weather}" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout labelSpanL="2" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer>
+                            <f:formElements>
+                                <f:FormElement label="{i18n>temperatureCurrent}">
+                                    <f:fields>
+                                        <Input editable="false" value="{ 
+                                            path: '/main/temp',
+                                            formatter: '.formatTemperature'
+                                            }" description="C" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>pressure}">
+                                    <f:fields>
+                                        <Input editable="false" value="{ 
+                                            path: '/main/pressure',
+                                            formatter: '.formatPressure'
+                                            }" description="hPa" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>humidity}">
+                                    <f:fields>
+                                        <Input editable="false" value="{ 
+                                            path: '/main/humidity',
+                                            formatter: '.formatHumidity'
+                                            }" description="%" />
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="{i18n>windSpeed}">
+                                    <f:fields>
+                                        <Input editable="false" value="{/wind/speed}" description="meter/sec" />
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+            </l:content>
+        </l:Grid>
+    </Page>
+</mvc:View>
